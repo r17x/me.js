@@ -1,0 +1,34 @@
+{
+  "name": "<PACKAGENAME>",
+  "version": "0.0.1",
+  "description": "<DESCRIPTION>",
+  "main": "./build/index.js",
+  "repository": "<PROJECTREPO>",
+  "author": "ri7nz <ri7nz.labs@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-minify": "^0.5.0",
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "scripts": {
+    "build": "yarn clean && babel src --out-dir dist --ignore tests",
+    "lint": "eslint -c .eslintrc ./src --fix",
+    "clean": "rm -rf dist",
+    "prepare": "rm -rf dist && yarn build",
+    "test": "jest --config jest.config.js",
+    "test-watch": "jest --watch",
+    "test-size": "bundlesize"
+  }
+}
